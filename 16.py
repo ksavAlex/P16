@@ -834,10 +834,6 @@ class DecRec:
     player: int
     action: object
 
-def policy_key(state, player):
-    """Generate policy key for state/player."""
-    return f"{public_state_key(state)}|p:{player}"
-
 def report_results(values_chips, bb_value=None, label="raw"):
     """Report evaluation results.
     
@@ -2113,9 +2109,6 @@ def cmd_train_blueprint_dist(args):
     if args.save_sum:
         with open(args.save_sum, "w") as f: json.dump(merged, f)
         print(f"Saved merged raw sums to {args.save_sum}")
-
-def load_blueprint(path:str):
-    with open(path,"r") as f: return json.load(f)
 
 def cmd_merge_sums(args):
     agg = {}
