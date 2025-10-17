@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Hydra6 (single-file, functional, no OOP) — 6-max NLHE bot:
+Poker2 (single-file, functional, no OOP) — 6-max NLHE bot:
 - External-Sampling MCCFR blueprint
 - Depth-limited online resolve with optional value net leaves
 - Pro-style bet ladders with pruning cap
