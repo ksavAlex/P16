@@ -2436,6 +2436,10 @@ def cmd_evaluate(args):
     except Exception:
         pass
     return 0
+  try:
+    print(f"[BP] lookup: hits={_BP_HITS} misses={_BP_MISSES} hit_rate={100.0*_BP_HITS/max(1,_BP_HITS+_BP_MISSES):.1f}%")
+except Exception:
+    pass
 
 def cmd_smoke_test(args):
     # 1) Small resolve
