@@ -2428,16 +2428,12 @@ def cmd_evaluate(args):
     report_results(results, BIG_BLIND, "raw")
     if AIVAT_LITE_ENABLED and results_aivat:
         report_results(results_aivat, BIG_BLIND, "AIVAT-lite")
-    try:
-        from __main__ import _BP_HITS, _BP_MISSES
-        total = _BP_HITS + _BP_MISSES
-        if total:
-            print(f"[BP] lookup: hits={_BP_HITS} misses={_BP_MISSES} hit_rate={100.0*_BP_HITS/total:.1f}%")
-    except Exception:
-        pass
-    return 0
-  try:
-    print(f"[BP] lookup: hits={_BP_HITS} misses={_BP_MISSES} hit_rate={100.0*_BP_HITS/max(1,_BP_HITS+_BP_MISSES):.1f}%")
+   
+try:
+    from __main__ import _BP_HITS, _BP_MISSES
+    total = _BP_HITS + _BP_MISSES
+    if total:
+        print(f"[BP] lookup: hits={_BP_HITS} misses={_BP_MISSES} hit_rate={100.0*_BP_HITS/total:.1f}%")
 except Exception:
     pass
 
